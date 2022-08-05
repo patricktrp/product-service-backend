@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/categories")
 public class CategoryController {
     private final ICategoryService categoryService;
 
@@ -20,22 +20,22 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    @PostMapping("/categories")
+    @PostMapping
     public Category createCategory(@RequestBody @Valid CategoryRequest categoryRequest) throws DataIntegrityViolationException {
         return categoryService.createCategory(categoryRequest);
     }
 
-    @GetMapping("/categories")
+    @GetMapping
     public List<Category> fetchCategories() {
         return categoryService.fetchCategories();
     }
 
-    @GetMapping("/categories/{categoryId}")
+    @GetMapping("/{categoryId}")
     public Category fetchCategoryById(@PathVariable Long categoryId) throws CategoryNotFoundException {
         return categoryService.fetchCategoryById(categoryId);
     }
 
-    @DeleteMapping("/categories/{categoryId}")
+    @DeleteMapping("/{categoryId}")
     public ResponseEntity<String> deleteCategory(@PathVariable Long categoryId) throws CategoryNotFoundException {
         categoryService.deleteCategory(categoryId);
         return ResponseEntity.ok().body("category with id " + categoryId + " successfully deleted");

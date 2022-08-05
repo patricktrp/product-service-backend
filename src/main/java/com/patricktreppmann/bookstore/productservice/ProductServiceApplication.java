@@ -11,10 +11,4 @@ public class ProductServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProductServiceApplication.class, args);
 	}
-
-	@Bean
-	public CommandLineRunner run(IBookService bookService) throws Exception {
-		return s -> {
-		};
-	}
 }
