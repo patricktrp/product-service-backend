@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://database-1.c1pxamuubhjd.eu-central-1.rds.amazonaws.com/products
-    username: postgres
-    password: XJOFc2pfNhnVZpL3JWMr
+    url: 
+    username: 
+    password: 
   jpa:
     hibernate:
       ddl-auto: validate
@@ -15,8 +15,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_mFJCXWt35
-          jwk-set-uri: https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_mFJCXWt35/.well-known/jwks.json
+          issuer-uri: 
+          jwk-set-uri: 
 springdoc:
   api-docs:
     path: /api-docs
